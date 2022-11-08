@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CardModule} from 'primeng/card';
-import {ButtonModule} from 'primeng/button';
-import {MenubarModule} from 'primeng/menubar';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { MenubarModule } from 'primeng/menubar';
 
 const myModule = [CardModule, ButtonModule, MenubarModule];
 
@@ -11,6 +11,6 @@ const myModule = [CardModule, ButtonModule, MenubarModule];
   imports: [
     CommonModule, myModule
   ],
-  exports:[myModule]
+  exports: [myModule]
 })
 export class PrimengModule { }

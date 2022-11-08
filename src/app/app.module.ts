@@ -10,12 +10,28 @@ import { NewProyComponent } from './components/proys/new-proy/new-proy.component
 import { ListProysModule } from './components/proys/list-proys/list-proys.module';
 import { ProyectComponent } from './components/proys/proyect/proyect.component';
 import { PrimengModule } from './primeng.module';
+import { VerDocentesComponent } from './components/users/ver-docentes/ver-docentes.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { VerEstudiantesComponent } from './components/users/ver-estudiantes/ver-estudiantes.component';
+import { AgregarEstudiantesComponent } from './components/users/agregar-estudiantes/agregar-estudiantes.component';
+import { AgregarDocentesComponent } from './components/users/agregar-docentes/agregar-docentes.component';
+import { UsuariosMenuComponent } from './components/users/usuarios-menu/usuarios-menu.component';
+import { EditarDocenteComponent } from './components/users/editar-docente/editar-docente.component';
+import { EditarEstudianteComponent } from './components/users/editar-estudiante/editar-estudiante.component';
+import { EditProyComponent } from './components/proys/edit-proy/edit-proy.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NewProyComponent,
-    ProyectComponent
+    ProyectComponent,
+    VerDocentesComponent,
+    VerEstudiantesComponent,
+    AgregarEstudiantesComponent,
+    AgregarDocentesComponent,
+    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +40,7 @@ import { PrimengModule } from './primeng.module';
     HomeModule,
     NewProyModule,
     ListProysModule,
-    PrimengModule, CardModule
+    PrimengModule, CardModule, FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

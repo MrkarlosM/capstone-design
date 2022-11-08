@@ -1,9 +1,12 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
-      <img src="../assets/images/logo/logoEscuela.png" height="40" class="mr-2">
+    <img src="../assets/images/logo/logoEscuela.png" height="40" class="mr-2" routerLink="/home">
   </ng-template>
   <ng-template pTemplate="end">
-      <input type="text" pInputText placeholder="Search">
+    <input type="text" pInputText placeholder="Search">
   </ng-template>
 </p-menubar>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+<i class="fa-solid fa-house"></i>
 <router-outlet></router-outlet>

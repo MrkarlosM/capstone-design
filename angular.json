@@ -24,7 +24,8 @@
             ],
             "styles": [
               "node_modules/primeng/resources/themes/vela-green/theme.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": []
           },
