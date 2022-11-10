@@ -1,0 +1,20 @@
+<div class="container mt-4 bg-light">
+    <h1>Lista de Proyectos</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Título</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let proy of proyects">
+                <td>{{proy.id}}</td>
+                <td>{{proy.title}}</td>
+                <td>{{proy.description}}</td>
+                <td routerLink="/edit-proy/{{proy.id}}"><i class="fas fa-edit fa-lg text-center"></i></td>
+        </tbody>
+    </table>
+</div>

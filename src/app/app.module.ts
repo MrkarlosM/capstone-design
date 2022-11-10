@@ -19,6 +19,9 @@ import { UsuariosMenuComponent } from './components/users/usuarios-menu/usuarios
 import { EditarDocenteComponent } from './components/users/editar-docente/editar-docente.component';
 import { EditarEstudianteComponent } from './components/users/editar-estudiante/editar-estudiante.component';
 import { EditProyComponent } from './components/proys/edit-proy/edit-proy.component';
+import { RegistraEstudianteComponent } from './components/account/registra-estudiante/registra-estudiante.component';
+import { RegistraDocenteComponent } from './components/account/registra-docente/registra-docente.component';
+import { LoginComponent } from './components/account/login/login.component';
 
 
 
@@ -31,7 +34,7 @@ import { EditProyComponent } from './components/proys/edit-proy/edit-proy.compon
     VerEstudiantesComponent,
     AgregarEstudiantesComponent,
     AgregarDocentesComponent,
-    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent
+    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent
   ],
   imports: [
     BrowserModule,

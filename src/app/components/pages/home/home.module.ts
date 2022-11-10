@@ -11,8 +11,7 @@ import { HomeComponent } from './home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule,
-    HomeRoutingModule, PrimengModule
+    CommonModule, HomeRoutingModule, PrimengModule
   ]
 })
 export class HomeModule { }

@@ -3,10 +3,12 @@
     <img src="../assets/images/logo/logoEscuela.png" height="40" class="mr-2" routerLink="/home">
   </ng-template>
   <ng-template pTemplate="end">
-    <input type="text" pInputText placeholder="Search">
+    <button (click)="displayLogin()" class="btn btn-primary ml-4"><i class="pi pi-sign-in"></i> Login</button>
+    <button class="btn btn-primary mx-2"><i class="pi pi-power-off"></i> Quit</button>
   </ng-template>
 </p-menubar>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 <i class="fa-solid fa-house"></i>
+<!-- <app-login *ngIf="displayLoginSwitch"></app-login> -->
 <router-outlet></router-outlet>

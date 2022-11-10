@@ -1,3 +1,4 @@
+import { proyects } from 'src/app/shared/models/proyect';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListProysComponent implements OnInit {
 
   constructor() { }
-
+  proyects = proyects
   ngOnInit(): void {
   }
 

@@ -1,11 +1,15 @@
-<div>
-    <p-card header="Título de Proyecto" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
-        <ng-template pTemplate="header">
-            <img alt="Card" src="../../../../assets/images/proys/proywebp.webp">
-        </ng-template>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-            quas!</p>
-    </p-card>
+<div class="container text-center mt-4 grid">
+    <div class="row" *ngFor="let proy of proyects">
+        <div class="col mb-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{proy.title}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{proy.prof}}</h6>
+                  <p class="card-text">{{proy.description}}</p>
+                  <a class="card-link" routerLink="/detail/{{proy.id}}">¡Ver Más!</a>
+                  <a href="#" class="card-link">Inscribirme</a>
+                </div>
+              </div>
+        </div>
+    </div>
 </div>
