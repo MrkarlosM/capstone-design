@@ -22,7 +22,8 @@ import { EditProyComponent } from './components/proys/edit-proy/edit-proy.compon
 import { RegistraEstudianteComponent } from './components/account/registra-estudiante/registra-estudiante.component';
 import { RegistraDocenteComponent } from './components/account/registra-docente/registra-docente.component';
 import { LoginComponent } from './components/account/login/login.component';
-
+import {DialogModule} from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -43,9 +44,12 @@ import { LoginComponent } from './components/account/login/login.component';
     HomeModule,
     NewProyModule,
     ListProysModule,
-    PrimengModule, CardModule, FontAwesomeModule
+    PrimengModule, CardModule, FontAwesomeModule, DialogModule,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+}

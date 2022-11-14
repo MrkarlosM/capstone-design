@@ -64,9 +64,9 @@ export class AppComponent {
         ];
     }
   
-    displayLogin(){
-      this.displayLoginSwitch=!this.displayLoginSwitch;
-      console.log("Se cambió")
-      console.log(this.displayLoginSwitch)
-    }
+    displayModal: boolean = false;
+
+    showModalDialog() {
+        this.displayModal = true;
+      }
 }
