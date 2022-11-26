@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Route, Router } from '@angular/router';
 import { proyects } from 'src/app/shared/models/proyect';
 
 @Component({
@@ -7,8 +8,12 @@ import { proyects } from 'src/app/shared/models/proyect';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  navigationExtras: NavigationExtras | undefined = {
+    state: {
+      value: null,
+    }
+  }
+  constructor(public router: Router) { }
 
   //Llamamos todos los items
   proyects0 = proyects
@@ -28,5 +33,4 @@ export class HomeComponent implements OnInit {
     this.proyects1 = this.proyects0.slice(event.first, this.cantidadPag + event.first)
     console.log(event.rows)
   }
-
 }

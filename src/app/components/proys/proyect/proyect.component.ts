@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { getSafePropertyAccessString } from '@angular/compiler';
-import { proyects } from 'src/app/shared/models/proyect';
+import { Proyect, proyects } from 'src/app/shared/models/proyect';
 
 
 @Component({
@@ -12,17 +12,23 @@ import { proyects } from 'src/app/shared/models/proyect';
 })
 export class ProyectComponent implements OnInit {
   proyects = proyects
-  constructor(private route: ActivatedRoute,
+  title = ""
+  description = ""
+  constructor(private route: ActivatedRoute, private router: Router,
     private location: Location) { }
 
-  ngOnInit(): void {
-    this.getProy();
+  ngOnInit() {
+    const result = this.getProy();
+    this.title = result.title;
+    this.description = result.description;
   }
 
-  getProy() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
-
+  getProy(): any {
+    const a = this.router.url.split('/').pop();
+    console.log("Sirve: " + a)
+    let result = proyects.find(item => item.id === a);
+    console.log(result?.title)
+    return result
   }
 
 }
