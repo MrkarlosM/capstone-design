@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { getSafePropertyAccessString } from '@angular/compiler';
-import { Proyect, proyects } from 'src/app/shared/models/proyect';
+import { Router } from '@angular/router';
+import { proyects } from 'src/app/shared/models/proyect';
 
 
 @Component({
@@ -11,23 +9,28 @@ import { Proyect, proyects } from 'src/app/shared/models/proyect';
   styleUrls: ['./proyect.component.css']
 })
 export class ProyectComponent implements OnInit {
+  //Llamamos los proyectos
   proyects = proyects
+  //Inicializamos el título y la descripción
   title = ""
   description = ""
-  constructor(private route: ActivatedRoute, private router: Router,
-    private location: Location) { }
+  constructor(private router: Router) { }
 
+  //Funciones que se ejecutan al inicio
   ngOnInit() {
+    //Se obtiene el resultado
     const result = this.getProy();
+    //Se asignan título y descripción
     this.title = result.title;
     this.description = result.description;
   }
 
   getProy(): any {
+    //Se obtiene la url completa y se modifica para obtener el final
     const a = this.router.url.split('/').pop();
-    console.log("Sirve: " + a)
+    //Se busca el proyecto que tenga la id especificada
     let result = proyects.find(item => item.id === a);
-    console.log(result?.title)
+    //Retorna el resultado
     return result
   }
 
