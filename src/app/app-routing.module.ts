@@ -11,6 +11,7 @@ import { UsuariosMenuComponent } from './components/users/usuarios-menu/usuarios
 import { EditarDocenteComponent } from './components/users/editar-docente/editar-docente.component';
 import { EditarEstudianteComponent } from './components/users/editar-estudiante/editar-estudiante.component';
 import { NewProyComponent } from './components/proys/new-proy/new-proy.component';
+import { TratamientoDatosComponent } from './components/tratamiento-datos/tratamiento-datos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,9 +24,10 @@ const routes: Routes = [
   { path: 'editar-docente', component: EditarDocenteComponent },
   { path: 'editar-estudiante', component: EditarEstudianteComponent },
   { path: 'detail/:id', component: ProyectComponent },
-  {path: 'new-proy', component: NewProyComponent},
-{path:  'list-proys', component: ListProysComponent},
-{path: 'edit-proy/:id', component: EditProyComponent}]
+  { path: 'new-proy', component: NewProyComponent },
+  { path: 'tratamiento-datos', component: TratamientoDatosComponent },
+  { path: 'list-proys', component: ListProysComponent },
+  { path: 'edit-proy/:id', component: EditProyComponent }]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

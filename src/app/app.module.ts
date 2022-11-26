@@ -24,6 +24,7 @@ import { RegistraDocenteComponent } from './components/account/registra-docente/
 import { LoginComponent } from './components/account/login/login.component';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TratamientoDatosComponent } from './components/tratamiento-datos/tratamiento-datos.component';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     VerEstudiantesComponent,
     AgregarEstudiantesComponent,
     AgregarDocentesComponent,
-    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent
+    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent
   ],
   imports: [
     BrowserModule,

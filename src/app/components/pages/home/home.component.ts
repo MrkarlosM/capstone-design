@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   //Cantidad total de items
   cantidadTotal = proyects.length;
   //Cantidad de items por página
-  cantidadPag = 5;
+  cantidadPag = 6;
 
   //Creamos el array inicial
   proyects1 = this.proyects0.slice(0, this.cantidadPag);

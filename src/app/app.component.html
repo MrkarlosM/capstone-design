@@ -1,19 +1,24 @@
+<!-- Barra de navegación -->
+<!-- Carga los items del modelo en el ts -->
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
     <img src="../assets/images/logo/logoEscuela.png" height="40" class="mr-2" routerLink="/home">
   </ng-template>
   <ng-template pTemplate="end">
-<p-button (click)="showModalDialog()" icon="pi pi-sign-in" label="Ingreso"></p-button>
-<p-dialog header="Ingresa" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
-    [draggable]="false" [resizable]="false">
-    <div class="container">
-    <input type="text" class="form-control">
-    </div>
-        <ng-template pTemplate="footer">
+    <!-- Este botón muestra el modal de logueo -->
+    <p-button (click)="showModalDialog()" icon="pi pi-sign-in" label="Ingreso"></p-button>
+    <!-- Diálogo del modal -->
+    <p-dialog header="Ingresa" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+      [resizable]="false">
+      <div class="container">
+        <input type="text" class="form-control">
+      </div>
+      <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="displayModal=false" label="Login" styleClass="p-button-text"></p-button>
-        </ng-template>
-</p-dialog>
-<p-button icon="pi pi-power-off" (click)="displayModal=false" label="Quit" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-dialog>
+    <!-- Este botón hace cerrar sesión -->
+    <p-button icon="pi pi-power-off" (click)="displayModal=false" label="Quit" styleClass="p-button-text"></p-button>
   </ng-template>
 </p-menubar>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"

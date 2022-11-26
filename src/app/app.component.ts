@@ -59,14 +59,25 @@ export class AppComponent {
 
                     }
                 ]
+            },
+            {
+                label: 'Acerca de',
+                icon: 'fas fa-question-circle',
+                items: [
+                    {
+                        label: 'Política de Tratamiento de Datos',
+                        icon: 'fas fa-info-circle',
+                        routerLink: 'tratamiento-datos'
+                    }
+                ]
             }
 
         ];
     }
-  
+
     displayModal: boolean = false;
 
     showModalDialog() {
         this.displayModal = true;
-      }
+    }
 }
