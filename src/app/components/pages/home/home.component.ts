@@ -10,18 +10,22 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  //Llamamos todos los items
   proyects0 = proyects
-  cantidad = proyects.length;
-  proyects1 = this.proyects0.slice(0, 5);
+  //Cantidad total de items
+  cantidadTotal = proyects.length;
+  //Cantidad de items por página
+  cantidadPag = 5;
+
+  //Creamos el array inicial
+  proyects1 = this.proyects0.slice(0, this.cantidadPag);
   ngOnInit(): void {
   }
 
   paginate(event: any) {
-    //event.first = Index of the first record
-    //event.rows = Number of rows to display in new page
-    //event.page = Index of the new page
-    //event.pageCount = Total number of pages
-    this.proyects1 = this.proyects0.slice(event.first, 5 + event.first)
+    /*Si el evento de cambiar página sucede, al array inicial le agregamos un slice con el primer elemento que debería
+    más el total*/
+    this.proyects1 = this.proyects0.slice(event.first, this.cantidadPag + event.first)
     console.log(event.rows)
   }
 
