@@ -1,5 +1,9 @@
 <div class="container mt-4 bg-light">
     <h1>Lista de Proyectos</h1>
+    <div class="form-group">
+        <strong>Buscar id proyecto</strong>
+        <input class="form-control" [(ngModel)]="id" style="width: 12rem;">
+    </div>
     <!-- Lista de proyectos en tabla -->
     <table class="table table-hover">
         <thead>
@@ -11,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let proy of proyects">
+            <tr *ngFor="let proy of proyects1 | tableFilter: id">
                 <td>{{proy.id}}</td>
                 <td>{{proy.title}}</td>
                 <td>{{proy.description}}</td>
@@ -19,3 +23,5 @@
         </tbody>
     </table>
 </div>
+<p-paginator [rows]="cantidadPag" [totalRecords]="cantidadTotal" (onPageChange)="paginate($event)">
+</p-paginator>
