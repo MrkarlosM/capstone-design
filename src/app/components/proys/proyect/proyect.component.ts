@@ -14,6 +14,7 @@ export class ProyectComponent implements OnInit {
   //Inicializamos el título y la descripción
   title = ""
   description = ""
+  proyPic = ""
   constructor(private router: Router) { }
 
   //Funciones que se ejecutan al inicio
@@ -23,6 +24,7 @@ export class ProyectComponent implements OnInit {
     //Se asignan título y descripción
     this.title = result.title;
     this.description = result.description;
+    this.proyPic = result.proyPic;
   }
 
   getProy(): any {

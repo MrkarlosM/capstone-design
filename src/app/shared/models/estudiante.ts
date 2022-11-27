@@ -3,66 +3,77 @@ export interface Estudiante {
     lastName: string;
     id: string;
     role?: string;
+    profilePic?: string;
 }
 
 export const estudiantes = [{
     name: "BlinBlin",
     lastName: "Funes Mori",
     id: "ABSD1",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 
 }, {
     name: "Ricardo",
     lastName: "Martínez",
     id: "ABSD2",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 },
 {
     name: "BlinBlin",
     lastName: "Funes Mori",
     id: "ABSD3",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 
 }, {
     name: "Ricardo",
     lastName: "Martínez",
     id: "ABSD4",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 },
 {
     name: "BlinBlin",
     lastName: "Funes Mori",
     id: "ABSD5",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 
 }, {
     name: "Ricardo",
     lastName: "Martínez",
     id: "ABSD6",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 },
 {
     name: "BlinBlin",
     lastName: "Funes Mori",
     id: "ABSD7",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 
 }, {
     name: "Ricardo",
     lastName: "Martínez",
     id: "ABSD8",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 },
 {
     name: "BlinBlin",
     lastName: "Funes Mori",
     id: "ABSD9",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 
 }, {
     name: "Ricardo",
     lastName: "Martínez",
     id: "ABSD10",
-    role: "ESTUDIANTE"
+    role: "ESTUDIANTE",
+    profilePic: "",
 }
 ]
