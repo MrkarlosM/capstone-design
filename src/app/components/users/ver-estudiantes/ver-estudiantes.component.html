@@ -1,7 +1,7 @@
 <div class="container mt-4 bg-light">
     <h1>Lista de Estudiantes</h1>
     <div class="form-group">
-        <strong>Buscar profesor</strong>
+        <strong>Buscar estudiante</strong>
         <input class="form-control" [(ngModel)]="name" style="width: 18rem;">
     </div>
     <table class="table table-hover">
@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let estudiante of estudiantes | tableFilter: name">
+            <tr *ngFor="let estudiante of estudiantes1 | tableFilter: name">
                 <td>{{estudiante.id}}</td>
                 <td>{{estudiante.name}}</td>
                 <td>{{estudiante.lastName}}</td>
@@ -23,3 +23,4 @@
         </tbody>
     </table>
 </div>
+<p-paginator [rows]="cantidadPag" [totalRecords]="cantidadTotal" (onPageChange)="paginate($event)"></p-paginator>

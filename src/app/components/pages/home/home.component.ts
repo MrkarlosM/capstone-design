@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { proyects } from 'src/app/shared/models/proyect';
 
 @Component({
@@ -8,11 +8,6 @@ import { proyects } from 'src/app/shared/models/proyect';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  navigationExtras: NavigationExtras | undefined = {
-    state: {
-      value: null,
-    }
-  }
   constructor(public router: Router) { }
 
   //Llamamos todos los items
@@ -21,9 +16,9 @@ export class HomeComponent implements OnInit {
   cantidadTotal = proyects.length;
   //Cantidad de items por página
   cantidadPag = 6;
-
   //Creamos el array inicial
   proyects1 = this.proyects0.slice(0, this.cantidadPag);
+
   ngOnInit(): void {
   }
 
