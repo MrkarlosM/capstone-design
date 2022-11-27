@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Table } from 'primeng/table';
 import { docentes } from 'src/app/shared/models/docente';
 
 @Component({
@@ -9,10 +10,12 @@ import { docentes } from 'src/app/shared/models/docente';
 export class VerDocentesComponent implements OnInit {
 
   docentes = docentes;
+  name = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

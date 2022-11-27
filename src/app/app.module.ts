@@ -22,10 +22,10 @@ import { EditProyComponent } from './components/proys/edit-proy/edit-proy.compon
 import { RegistraEstudianteComponent } from './components/account/registra-estudiante/registra-estudiante.component';
 import { RegistraDocenteComponent } from './components/account/registra-docente/registra-docente.component';
 import { LoginComponent } from './components/account/login/login.component';
-import {DialogModule} from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TratamientoDatosComponent } from './components/tratamiento-datos/tratamiento-datos.component';
-
+import { TableFilterPipe } from '../app/components/users/ver-docentes/table-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { TratamientoDatosComponent } from './components/tratamiento-datos/tratam
     VerEstudiantesComponent,
     AgregarEstudiantesComponent,
     AgregarDocentesComponent,
-    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent
+    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent, TableFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -45,12 +45,12 @@ import { TratamientoDatosComponent } from './components/tratamiento-datos/tratam
     HomeModule,
     NewProyModule,
     ListProysModule,
-    PrimengModule, CardModule, FontAwesomeModule, DialogModule,BrowserAnimationsModule
+    PrimengModule, CardModule, FontAwesomeModule, DialogModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 
 }

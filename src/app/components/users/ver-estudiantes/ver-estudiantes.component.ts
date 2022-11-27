@@ -11,6 +11,7 @@ export class VerEstudiantesComponent implements OnInit {
   constructor() { }
 
   estudiantes = estudiantes
+  name = "";
 
   ngOnInit(): void {
   }

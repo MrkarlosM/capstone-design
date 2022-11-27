@@ -1,5 +1,9 @@
 <div class="container mt-4 bg-light">
     <h1>Lista de Docentes</h1>
+    <div class="form-group">
+        <strong>Buscar profesor</strong>
+        <input class="form-control" [(ngModel)]="name" style="width: 18rem;">
+    </div>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -10,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let docente of docentes">
+            <tr *ngFor="let docente of docentes | tableFilter: name">
                 <td>{{docente.id}}</td>
                 <td>{{docente.name}}</td>
                 <td>{{docente.lastName}}</td>

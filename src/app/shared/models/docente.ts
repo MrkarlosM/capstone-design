@@ -16,5 +16,11 @@ export const docentes = [{
     lastName: "Martínez",
     id: "ABSD2",
     role: "PROFE"
+},
+{
+    name: "Carlos",
+    lastName: "Martínez",
+    id: "ABSD3",
+    role: "PROFE"
 }
 ]
