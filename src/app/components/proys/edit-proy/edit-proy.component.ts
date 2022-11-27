@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { proyects } from 'src/app/shared/models/proyect';
@@ -15,7 +16,7 @@ export class EditProyComponent implements OnInit {
   title = ""
   description = ""
   proyPic = ""
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _location: Location) { }
 
   //Funciones que se ejecutan al inicio
   ngOnInit() {
@@ -34,6 +35,9 @@ export class EditProyComponent implements OnInit {
     let result = proyects.find(item => item.id === a);
     //Retorna el resultado
     return result
+  }
+  backClicked() {
+    this._location.back();
   }
 
 }
