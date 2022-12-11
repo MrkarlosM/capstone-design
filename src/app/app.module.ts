@@ -26,6 +26,9 @@ import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TratamientoDatosComponent } from './components/tratamiento-datos/tratamiento-datos.component';
 import { TableFilterPipe } from '../app/components/users/ver-docentes/table-filter.pipe';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,7 @@ import { TableFilterPipe } from '../app/components/users/ver-docentes/table-filt
     HomeModule,
     NewProyModule,
     ListProysModule,
-    PrimengModule, CardModule, FontAwesomeModule, DialogModule, BrowserAnimationsModule
+    PrimengModule, CardModule, FontAwesomeModule, DialogModule, BrowserAnimationsModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,7 +25,6 @@ export class ListProysComponent implements OnInit {
     /*Si el evento de cambiar página sucede, al array inicial le agregamos un slice con el primer elemento que debería
     más el total*/
     this.proyects1 = this.proyects0.slice(event.first, this.cantidadPag + event.first)
-    console.log(event.rows)
   }
 
 }

@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let docente of docentes1 | tableFilter: name">
+            <tr *ngFor="let docente of items | async">
                 <td>{{docente.id}}</td>
                 <td>{{docente.name}}</td>
                 <td>{{docente.lastName}}</td>

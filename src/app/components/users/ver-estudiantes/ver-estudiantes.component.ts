@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { estudiantes } from 'src/app/shared/models/estudiante';
 
 @Component({
@@ -7,8 +9,10 @@ import { estudiantes } from 'src/app/shared/models/estudiante';
   styleUrls: ['./ver-estudiantes.component.css']
 })
 export class VerEstudiantesComponent implements OnInit {
-
-  constructor() { }
+  items: Observable<any[]>;
+  constructor(firestore: AngularFirestore) { 
+    this.items = firestore.collection('ESTUDIANTES').valueChanges();
+  }
 
   name = "";
   //Llamamos todos los items

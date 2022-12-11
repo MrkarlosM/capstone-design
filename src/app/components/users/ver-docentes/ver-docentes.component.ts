@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Table } from 'primeng/table';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { docentes } from 'src/app/shared/models/docente';
 
 @Component({
@@ -18,15 +19,17 @@ export class VerDocentesComponent implements OnInit {
   cantidadPag = 5;
   //Creamos el array inicial
   docentes1 = this.docentes0.slice(0, this.cantidadPag);
-
-  constructor() { }
+  items: Observable<any[]>;
+  constructor(firestore: AngularFirestore) { 
+    this.items = firestore.collection('PROFESORES').valueChanges();
+  }
 
   ngOnInit(): void {
   }
   paginate(event: any) {
     /*Si el evento de cambiar página sucede, al array inicial le agregamos un slice con el primer elemento que debería
     más el total*/
-    this.docentes1 = this.docentes0.slice(event.first, this.cantidadPag + event.first)
+    //this.docentes1 = this.docentes0.slice(event.first, this.cantidadPag + event.first)
     console.log(event.rows)
   }
 
