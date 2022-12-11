@@ -1,7 +1,7 @@
 export interface Proyect {
     title: string;
     description: string;
-    id: string;
+    uid: string;
     tagProy: string[];
     prof: string
     proyPic?: string;
