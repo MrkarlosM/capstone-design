@@ -1,8 +1,9 @@
 <div class="container mt-4 bg-light pb-2 mb-4">
     <h1 class="pt-2">Lista de Estudiantes</h1>
-    <div class="form-group">
-        <strong>Buscar nombre estudiante</strong>
-        <input class="form-control" [(ngModel)]="name" style="width: 12rem;">
+    <div class="container row">
+        <input class="form-control col-4" [formControl]="name" style="width: 12rem;" placeholder="Docente">
+        <button (click)="searchName()" class="btn btn-primary col-1 mx-2">Buscar</button>
+        <button (click)="clear()" class="btn btn-secondary col-1 mx-2">Limpiar</button>
     </div>
     <table class="table table-hover">
         <thead>
@@ -14,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let estudiante of items | async">
+            <tr *ngFor="let estudiante of estudiantes">
                 <td>{{estudiante.id}}</td>
                 <td>{{estudiante.name}}</td>
                 <td>{{estudiante.lastName}}</td>
