@@ -1,7 +1,7 @@
 export interface Estudiante {
     name: string;
     lastName: string;
-    id: string;
+    uid: string;
     role?: string;
     profilePic?: string;
 }
