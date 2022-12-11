@@ -29,6 +29,7 @@ import { TableFilterPipe } from '../app/components/users/ver-docentes/table-filt
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,ReactiveFormsModule,
     NgbModule,
     HomeModule,
     NewProyModule,
