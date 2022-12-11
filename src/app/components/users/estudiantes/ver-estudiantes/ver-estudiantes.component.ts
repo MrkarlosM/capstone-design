@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { UsersService } from '../users.service';
+import { DocentesService } from '../../docentes/ver-docentes/docentes.service';
 
 @Component({
   selector: 'app-ver-estudiantes',
@@ -9,7 +9,7 @@ import { UsersService } from '../users.service';
 })
 export class VerEstudiantesComponent implements OnInit {
 
-  constructor(private userSvc: UsersService) { 
+  constructor(private userSvc: DocentesService) { 
   }
 
   name = new FormControl('');

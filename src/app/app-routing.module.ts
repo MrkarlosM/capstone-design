@@ -3,13 +3,13 @@ import { ListProysComponent } from './components/proys/list-proys/list-proys.com
 import { ProyectComponent } from './components/proys/proyect/proyect.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AgregarDocentesComponent } from './components/users/agregar-docentes/agregar-docentes.component';
-import { VerDocentesComponent } from './components/users/ver-docentes/ver-docentes.component';
-import { AgregarEstudiantesComponent } from './components/users/agregar-estudiantes/agregar-estudiantes.component';
-import { VerEstudiantesComponent } from './components/users/ver-estudiantes/ver-estudiantes.component';
+import { AgregarDocentesComponent } from './components/users/docentes/agregar-docentes/agregar-docentes.component';
+import { VerDocentesComponent } from './components/users/docentes/ver-docentes/ver-docentes.component';
+import { AgregarEstudiantesComponent } from './components/users/estudiantes/agregar-estudiantes/agregar-estudiantes.component';
+import { VerEstudiantesComponent } from './components/users/estudiantes/ver-estudiantes/ver-estudiantes.component';
 import { UsuariosMenuComponent } from './components/users/usuarios-menu/usuarios-menu.component';
-import { EditarDocenteComponent } from './components/users/editar-docente/editar-docente.component';
-import { EditarEstudianteComponent } from './components/users/editar-estudiante/editar-estudiante.component';
+import { EditarDocenteComponent } from './components/users/docentes/editar-docente/editar-docente.component';
+import { EditarEstudianteComponent } from './components/users/estudiantes/editar-estudiante/editar-estudiante.component';
 import { NewProyComponent } from './components/proys/new-proy/new-proy.component';
 import { TratamientoDatosComponent } from './components/tratamiento-datos/tratamiento-datos.component';
 

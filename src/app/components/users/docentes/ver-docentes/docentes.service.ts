@@ -6,7 +6,7 @@ import { Docente } from 'src/app/shared/models/docente';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class DocentesService {
 
   constructor(private afs: AngularFirestore) {   }
   //Obtiene todos los items de una colección dado el nombre de la colección de forma ascendente por su name

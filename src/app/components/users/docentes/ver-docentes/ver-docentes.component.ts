@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormControl } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { Docente, docentes } from 'src/app/shared/models/docente';
-import { UsersService } from '../users.service';
+import { DocentesService } from './docentes.service';
 
 @Component({
   selector: 'app-ver-docentes',
@@ -22,7 +22,7 @@ export class VerDocentesComponent implements OnInit {
   //Creamos el array inicial
   //docentes1 = this.docentes0.slice(0, this.cantidadPag);
   docentes: any[] | undefined;
-  constructor(public firestore: AngularFirestore, private userSvc: UsersService) {
+  constructor(public firestore: AngularFirestore, private userSvc: DocentesService) {
   }
 
   ngOnInit() {
