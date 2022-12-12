@@ -41,4 +41,8 @@ export class DocentesService {
     return this.afs.doc<Docente>(`PROFESORES/${id}`).valueChanges();
   }
 
+  public editDocente(id: string |undefined, docente: any): Promise<any>{
+    return this.afs.doc<Docente>(`PROFESORES/${id}`).update(docente);
+  }
+
 }
