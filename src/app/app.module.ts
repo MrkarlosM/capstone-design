@@ -31,6 +31,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeModule,
     NewProyModule,
     ListProysModule,
-    PrimengModule, CardModule, FontAwesomeModule, DialogModule, BrowserAnimationsModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule
+    PrimengModule,CardModule,FontAwesomeModule, DialogModule, BrowserAnimationsModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
