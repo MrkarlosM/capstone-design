@@ -33,7 +33,6 @@ id:string|undefined;
   }
   onSubmit(){
     this.toastr.success("Has editado el docente","Éxito")
-    console.log(this.profileForm)
     const docente ={
       name: this.profileForm.value.name,
       lastName: this.profileForm.value.lastName,
@@ -43,5 +42,12 @@ id:string|undefined;
     const idProfe = this.route.snapshot.params['id'];
     this.docentesSvc.editDocente(idProfe,docente)
 
+  }
+
+  onDelete(){
+    this.toastr.error("Has borrado el docente","Éxito")
+    const idProfe = this.route.snapshot.params['id'];
+    this.docentesSvc.borraDocente(idProfe)
+    this._location.back();
   }
 }

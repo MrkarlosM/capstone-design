@@ -49,4 +49,9 @@ export class DocentesService {
   public crearDocente(docente: any) {
     return this.afs.collection("PROFESORES").add(docente);
   }
+
+  //Elimina docente
+  public borraDocente(id: string){
+    return this.afs.collection("PROFESORES").doc(id).delete();
+  }
 }
