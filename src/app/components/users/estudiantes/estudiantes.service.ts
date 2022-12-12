@@ -35,4 +35,22 @@ export class EstudiantesService {
     })))
   }
 
+    //Obtiene un solo item de una colección dada su id
+    public getOneUser(id: string): Observable<Estudiante | undefined> {
+      return this.afs.doc<Estudiante>(`ESTUDIANTES/${id}`).valueChanges();
+    }
+    //Edita un estudiante con su id y su objeto estudiante
+    public editUser(id: string | undefined, estudiante: any): Promise<any> {
+      return this.afs.doc<Estudiante>(`ESTUDIANTES/${id}`).update(estudiante);
+    }
+  
+    //Agrega un estudiante con su objeto estudiante
+    public crearUser(estudiante: any) {
+      return this.afs.collection("ESTUDIANTES").add(estudiante);
+    }
+  
+    //Elimina estudiante
+    public borraUser(id: string){
+      return this.afs.collection("ESTUDIANTES").doc(id).delete();
+    }
 }

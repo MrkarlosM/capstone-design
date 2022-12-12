@@ -7,23 +7,36 @@
                 <div class="card-body">
                     <h3>Editar Estudiante</h3>
                     <!-- Se crea un formulario para almacenar los datos -->
-                    <form>
+                    <form [formGroup]="profileForm">
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <h3>Nombre</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.name}}"
+                                    formControlName="name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Apellido">
+                                <h3>Apellido</h3>
+                                <input type="text" class="form-control"
+                                    placeholder="{{this.profileForm.value.lastName}}" formControlName="lastName">
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Correo">
+                                <h3>Correo</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.email}}"
+                                    formControlName="email">
                             </div>
                         </div>
                         <div class="mt-3">
                             <button class="btn btn-secondary btn-lg " (click)="backClicked()">Volver</button>
-                            <button class="btn btn-dark btn-lg m-3" type="submit">Agregar</button>
+                            <button class="btn btn-dark btn-lg m-3" type="submit" [disabled]="profileForm.invalid"
+                                (click)="onSubmit()">Editar</button>
+                            <button class="btn btn-danger btn-lg " type="button" [swal]="deleteSwal"
+                                (confirm)="onDelete()"><i class="fa-solid fa-trash-can"></i>Eliminar</button>
+                            <swal #deleteSwal title="¿Borrar a {{ this.profileForm.value.name }}?"
+                                text="Esto no se puede deshacer."
+                                [swalOptions]="{ confirmButtonText: 'Comprendo',  showCancelButton: true,cancelButtonText: 'Cancela'}">
+                            </swal>
                         </div>
                     </form>
                 </div>
