@@ -4,23 +4,30 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3>Agregar Docente</h3>
-                    <form>
+                    <form [formGroup]="profileForm">
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <h3>Nombre</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.name}}"
+                                    formControlName="name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Apellido">
+                                <h3>Apellido</h3>
+                                <input type="text" class="form-control"
+                                    placeholder="{{this.profileForm.value.lastName}}" formControlName="lastName">
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Correo">
+                                <h3>Correo</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.email}}"
+                                    formControlName="email">
                             </div>
                         </div>
                         <div class="mt-3">
-                            <button class="btn btn-secondary btn-lg ">Volver</button>
-                            <button class="btn btn-dark btn-lg m-3" type="submit">Agregar</button>
+                            <button class="btn btn-secondary btn-lg " (click)="backClicked()">Volver</button>
+                            <button class="btn btn-dark btn-lg m-3" type="submit" [disabled]="profileForm.invalid"
+                                (click)="onSubmit()">Agregar</button>
                         </div>
                     </form>
                 </div>
