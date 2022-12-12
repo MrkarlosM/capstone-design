@@ -9,7 +9,7 @@ import { EstudiantesService } from '../estudiantes.service';
 })
 export class VerEstudiantesComponent implements OnInit {
 
-  constructor(private userSvc: EstudiantesService) { 
+  constructor(private estudiantesSvc: EstudiantesService) { 
   }
 
   name = new FormControl('');
@@ -29,21 +29,21 @@ export class VerEstudiantesComponent implements OnInit {
   ngOnInit() {
     //Los usuarios para paginar
     //Los usuarios para paginar
-    this.userSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.estudiantes=res);
+    this.estudiantesSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.estudiantes=res);
     //Los usuarios totales
-    this.userSvc.getAllUsers(this.tipoUser).subscribe(res=>this.cantidadTotal=res.length);
+    this.estudiantesSvc.getAllUsers(this.tipoUser).subscribe(res=>this.cantidadTotal=res.length);
   }
   paginate(event: any) {
     /*Si el evento de cambiar página sucede, al array inicial le agregamos un slice con el primer elemento que debería
     más el total*/
     //this.docentes1 = this.docentes0.slice(event.first, this.cantidadPag + event.first)
-    this.userSvc.getAllUsers(this.tipoUser).subscribe(res=>this.estudiantes = res.slice(event.first, this.cantidadPag + event.first));
+    this.estudiantesSvc.getAllUsers(this.tipoUser).subscribe(res=>this.estudiantes = res.slice(event.first, this.cantidadPag + event.first));
   }
 
   searchName() {
-    this.userSvc.getUsersSearch(this.tipoUser,this.name.value).subscribe(res=>this.estudiantes=res);
+    this.estudiantesSvc.getUsersSearch(this.tipoUser,this.name.value).subscribe(res=>this.estudiantes=res);
   }
   clear() {
-    this.userSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.estudiantes=res);
+    this.estudiantesSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.estudiantes=res);
   }
 }

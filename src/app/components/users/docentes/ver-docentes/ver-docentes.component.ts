@@ -23,27 +23,27 @@ export class VerDocentesComponent implements OnInit {
   //docentes1 = this.docentes0.slice(0, this.cantidadPag);
   docentes: any[] | undefined;
   tipoUser = 'PROFESORES'
-  constructor(public firestore: AngularFirestore, private userSvc: DocentesService) {
+  constructor(public firestore: AngularFirestore, private docentesSvc: DocentesService) {
   }
 
   ngOnInit() {
     //Los usuarios para paginar
-    this.userSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.docentes=res);
+    this.docentesSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.docentes=res);
     //Los usuarios totales
-    this.userSvc.getAllUsers(this.tipoUser).subscribe(res=>this.cantidadTotal=res.length);
+    this.docentesSvc.getAllUsers(this.tipoUser).subscribe(res=>this.cantidadTotal=res.length);
   }
 
   paginate(event: any) {
     /*Si el evento de cambiar página sucede, al array inicial le agregamos un slice con el primer elemento que debería
     más el total*/
     //this.docentes1 = this.docentes0.slice(event.first, this.cantidadPag + event.first)
-    this.userSvc.getAllUsers(this.tipoUser).subscribe(res=>this.docentes = res.slice(event.first, this.cantidadPag + event.first));
+    this.docentesSvc.getAllUsers(this.tipoUser).subscribe(res=>this.docentes = res.slice(event.first, this.cantidadPag + event.first));
   }
 
   searchName() {
-    this.userSvc.getUsersSearch(this.tipoUser,this.name.value).subscribe(res=>this.docentes=res);
+    this.docentesSvc.getUsersSearch(this.tipoUser,this.name.value).subscribe(res=>this.docentes=res);
   }
   clear() {
-    this.userSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.docentes=res);
+    this.docentesSvc.getUsersPaginate(this.tipoUser,this.cantidadPag).subscribe(res=>this.docentes=res);
   }
 }
