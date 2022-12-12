@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DocentesService } from '../docentes.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-editar-docente',
@@ -19,18 +20,28 @@ export class EditarDocenteComponent implements OnInit {
     
   })
 
-  constructor(private _location: Location, private docentesSvc: DocentesService, public route: ActivatedRoute) { }
-
+  constructor(private _location: Location, private docentesSvc: DocentesService, public route: ActivatedRoute, private toastr: ToastrService) { }
+id:string|undefined;
   ngOnInit(): void {
     const idProfe = this.route.snapshot.params['id'];
-    this.docentesSvc.getOneUser(idProfe).subscribe(res=>this.profileForm.value.name=res?.name)
-    this.docentesSvc.getOneUser(idProfe).subscribe(res=>this.profileForm.value.lastName=res?.lastName)
-    this.docentesSvc.getOneUser(idProfe).subscribe(res=>this.profileForm.value.email=res?.email)
+    this.docentesSvc.getOneUser(idProfe).subscribe(res=>this.profileForm.patchValue({name: res?.name,
+    lastName:res?.lastName,
+  email:res?.email}))
   }
   backClicked() {
     this._location.back();
   }
   onSubmit(){
+    this.toastr.success("Has editado el docente","Éxito")
     console.log(this.profileForm)
+    const docente ={
+      name: this.profileForm.value.name,
+      lastName: this.profileForm.value.lastName,
+      email: this.profileForm.value.email,
+      fechaActualizacion: new Date()
+    }
+    const idProfe = this.route.snapshot.params['id'];
+    this.docentesSvc.editDocente(idProfe,docente)
+
   }
 }
