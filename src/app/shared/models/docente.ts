@@ -4,6 +4,7 @@ export interface Docente {
     uid: string;
     role?: string;
     profilePic?: string;
+    email: string;
 }
 
 export const docentes = [{
