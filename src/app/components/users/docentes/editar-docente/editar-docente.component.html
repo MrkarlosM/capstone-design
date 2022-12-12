@@ -4,18 +4,21 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3>Editar Docente</h3>
-                    <form>
+                    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <h3>Nombre</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.name}}" formControlName="name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Apellido">
+                                <h3>Apellido</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.lastName}}" formControlName="lastName">
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Correo">
+                                <h3>Correo</h3>
+                                <input type="text" class="form-control" placeholder="{{this.profileForm.value.email}}" formControlName="email">
                             </div>
                         </div>
                         <div class="mt-3">
