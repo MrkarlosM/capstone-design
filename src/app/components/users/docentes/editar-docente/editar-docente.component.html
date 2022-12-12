@@ -28,9 +28,12 @@
                             <button class="btn btn-secondary btn-lg " (click)="backClicked()">Volver</button>
                             <button class="btn btn-dark btn-lg m-3" type="submit" [disabled]="profileForm.invalid"
                                 (click)="onSubmit()">Editar</button>
-                            <button class="btn btn-danger btn-lg " type="button"[swal]="{ title: '¿Está seguro de eliminar a este docente?', confirmButtonText:'Estoy seguro, Borrar',showCancelButton: true, cancelButtonText: 'Cancela' }"
-                            (confirm)="onDelete()"><i class="fa-solid fa-trash-can"
-                                ></i>Eliminar</button>
+                                <button class="btn btn-danger btn-lg " type="button" [swal]="deleteSwal"
+                                (confirm)="onDelete()"><i class="fa-solid fa-trash-can"></i>Eliminar</button>
+                            <swal #deleteSwal title="¿Borrar a {{ this.profileForm.value.name }}?"
+                                text="Esto no se puede deshacer."
+                                [swalOptions]="{ confirmButtonText: 'Comprendo',  showCancelButton: true,cancelButtonText: 'Cancela'}">
+                            </swal>
                         </div>
                     </form>
                 </div>
