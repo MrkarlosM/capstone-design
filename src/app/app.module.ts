@@ -31,6 +31,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,ToastrModule.forRoot(),
+    AppRoutingModule,ReactiveFormsModule,ToastrModule.forRoot(),SweetAlert2Module.forRoot(),
     NgbModule,
     HomeModule,
     NewProyModule,
