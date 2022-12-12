@@ -35,4 +35,10 @@ export class DocentesService {
     })))
   }
 
+  //Obtiene un solo item de una colección dada su id
+
+  public getOneUser(id: string):Observable<Docente | undefined>{
+    return this.afs.doc<Docente>(`PROFESORES/${id}`).valueChanges();
+  }
+
 }
