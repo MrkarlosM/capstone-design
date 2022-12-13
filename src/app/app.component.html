@@ -6,20 +6,31 @@
   </ng-template>
   <ng-template pTemplate="end">
     <!-- Este botón muestra el modal de logueo -->
-    <p-button (click)="showModalDialog()" icon="pi pi-sign-in" label="Ingreso"></p-button>
+    <p-button (click)="showModalLogin()" icon="pi pi-sign-in" label="Ingreso"></p-button>
+    <p-button (click)="showModalReg()" icon="pi pi-user-plus" label="Registro"></p-button>
     <!-- Diálogo del modal -->
-    <p-dialog header="Ingresa" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    <p-dialog header="Registro" [(visible)]="displayReg" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
       [resizable]="false">
       <div class="container">
         <input type="text" class="form-control">
         <input type="password" class="form-control">
       </div>
       <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="displayModal=false" label="Login" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Registro" styleClass="p-button-text"></p-button>
       </ng-template>
     </p-dialog>
+    <p-dialog header="Ingrese" [(visible)]="displayLogin" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <div class="container">
+      <input type="text" class="form-control">
+      <input type="password" class="form-control">
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="displayModal=false" label="Ingresar" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
     <!-- Este botón hace cerrar sesión -->
-    <p-button icon="pi pi-power-off" (click)="displayModal=false" label="Quit" styleClass="p-button-text"></p-button>
+    <p-button icon="pi pi-power-off" (click)="logOff()" label="Quit" styleClass="p-button-text"></p-button>
   </ng-template>
 </p-menubar>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"

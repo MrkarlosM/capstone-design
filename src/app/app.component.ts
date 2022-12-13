@@ -75,9 +75,18 @@ export class AppComponent {
         ];
     }
 
+    displayReg: boolean = false;
+    displayLogin: boolean = false;
     displayModal: boolean = false;
 
-    showModalDialog() {
-        this.displayModal = true;
+    showModalReg() {
+        this.displayReg = true;
+    }
+    showModalLogin() {
+        this.displayLogin = true;
+    }
+
+    logOff(){
+        console.log("Salió")
     }
 }
