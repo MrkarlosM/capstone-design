@@ -7,7 +7,7 @@
   <ng-template pTemplate="end">
     <!-- Este botón muestra el modal de logueo -->
     <p-button (click)="showModalLogin()" icon="pi pi-sign-in" label="Ingreso"></p-button>
-    <p-button (click)="showModalReg()" icon="pi pi-user-plus" label="Registro"></p-button>
+    <p-button (click)="showModalReg()" icon="pi pi-user-plus" label="Registro" class="mx-2"></p-button>
     <!-- Diálogo del modal -->
     <p-dialog header="Registro" [(visible)]="displayReg" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
       [resizable]="false">
@@ -30,7 +30,7 @@
     </ng-template>
   </p-dialog>
     <!-- Este botón hace cerrar sesión -->
-    <p-button icon="pi pi-power-off" (click)="logOff()" label="Quit" styleClass="p-button-text"></p-button>
+    <p-button *ngIf="logedIn" icon="pi pi-power-off" (click)="logOff()" label="Quit" styleClass="p-button-text"></p-button>
   </ng-template>
 </p-menubar>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"

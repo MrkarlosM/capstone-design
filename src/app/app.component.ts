@@ -9,6 +9,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class AppComponent {
     items: MenuItem[] = [];
+    logedIn: boolean = false;
     hability: boolean = false;
     displayLoginSwitch = false;
 
@@ -84,6 +85,7 @@ export class AppComponent {
     }
     showModalLogin() {
         this.displayLogin = true;
+        this.logedIn = true;
     }
 
     logOff(){
