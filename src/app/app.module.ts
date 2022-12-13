@@ -32,6 +32,7 @@ import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     VerEstudiantesComponent,
     AgregarEstudiantesComponent,
     AgregarDocentesComponent,
-    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent, TableFilterPipe
+    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent, TableFilterPipe, SpinnerComponent
   ],
   imports: [
     BrowserModule,
