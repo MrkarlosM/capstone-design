@@ -76,12 +76,16 @@ export class AppComponent {
         ];
     }
 
-    displayReg: boolean = false;
+    displayRegDoc: boolean = false;
+    displayRegEst: boolean = false;
     displayLogin: boolean = false;
     displayModal: boolean = false;
 
-    showModalReg() {
-        this.displayReg = true;
+    showModalRegDoc() {
+        this.displayRegDoc = true;
+    }
+    showModalRegEst() {
+        this.displayRegEst = true;
     }
     showModalLogin() {
         this.displayLogin = true;
