@@ -16,17 +16,17 @@
     </p-dialog>
     <p-dialog header="Registra Estudiante" [(visible)]="displayRegEst" [modal]="true" [style]="{width: '50vw'}"
       [draggable]="false" [resizable]="false">
-      <app-registra-estudiante></app-registra-estudiante>
+      <app-registra-estudiante (childToParent)="childToParent($event)"></app-registra-estudiante>
     </p-dialog>
     <p-dialog header="Ingrese" [(visible)]="displayLogin" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
       [resizable]="false">
-      <app-login></app-login>
+      <app-login ></app-login>
       <p class="mt-4" style="text-align: center;">¿No recuerda? <a routerLink="/app-recupera" (click)="displayLogin=false">Recupera tu
           cuenta</a></p>
           <p style="text-align: center;">¿No tiene cuenta? <a href="#" (click)="displayLogin=false" (click)="displayRegEst=true">Regístrate como Estudiante</a></p>
             <p style="text-align: center;">¿No tiene cuenta? <a href="#"(click)="displayLogin=false" (click)="displayRegDoc=true">Regístrate como Docente</a></p>
       <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ingresar"
+        <p-button icon="pi pi-check" (click)="displayLogin=false" label="Ingresar"
           styleClass="p-button-text"></p-button>
       </ng-template>
     </p-dialog>

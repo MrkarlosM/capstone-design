@@ -50,7 +50,7 @@ export class EstudiantesService {
     }
 
     //Agrega un estudiante con su objeto estudiante y id
-    public crearUserWithId(estudiante: any, id:any) {
+    public crearUserWithId(estudiante: any, id:string) {
       return this.afs.doc(`ESTUDIANTES/${id}`).set(estudiante);
     }    
   

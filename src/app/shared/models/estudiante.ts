@@ -5,7 +5,9 @@ export interface Estudiante {
     role?: string;
     profilePic?: string;
     email: string;
-    igroup?: string;
+    igroup: string;
+    carrera: string;
+    fechaActualizacion: Date
 }
 
 export const estudiantes = [{

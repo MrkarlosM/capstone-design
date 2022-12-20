@@ -1,5 +1,5 @@
 <div class="container text-center justify-content-center">
-    <form [formGroup]="registrarUsuario" (ngSubmit)="registrar()">
+    <form *ngIf="!loading" [formGroup]="registrarUsuario" (ngSubmit)="registrar()">
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="inputEmail4">Nombre</label>
@@ -45,5 +45,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Registro</button>
+        
     </form>
+    <app-spinner *ngIf="loading" ></app-spinner>
 </div>

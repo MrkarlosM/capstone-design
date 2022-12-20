@@ -12,6 +12,7 @@ export class AppComponent {
     logedIn: boolean = false;
     hability: boolean = false;
     displayLoginSwitch = false;
+    closer:boolean = false;
 
     ngOnInit() {
         this.items = [
@@ -79,7 +80,7 @@ export class AppComponent {
     displayRegDoc: boolean = false;
     displayRegEst: boolean = false;
     displayLogin: boolean = false;
-    displayModal: boolean = false;
+    displayModal:boolean= true;
 
     showModalRegDoc() {
         this.displayRegDoc = true;
@@ -91,6 +92,10 @@ export class AppComponent {
         this.displayLogin = true;
         this.logedIn = true;
     }
+    childToParent(closer: Boolean){
+        this.displayRegEst = false;
+        this.displayRegDoc = false;
+        }
 
     logOff(){
         console.log("Salió")
