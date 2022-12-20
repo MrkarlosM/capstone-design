@@ -31,13 +31,13 @@ id:string|undefined;
   onSubmit(){
     this.toastr.info("Has agregado el estudiante"+this.profileForm.value.name,"Éxito")
     console.log(this.profileForm)
-    const docente ={
+    const estudiante ={
       name: this.profileForm.value.name,
       lastName: this.profileForm.value.lastName,
       email: this.profileForm.value.email,
       fechaActualizacion: new Date()
     }
-    this.estudiantesSvc.crearUser(docente);
+    this.estudiantesSvc.crearUser(estudiante);
 
   }
 

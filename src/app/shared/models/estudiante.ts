@@ -5,6 +5,7 @@ export interface Estudiante {
     role?: string;
     profilePic?: string;
     email: string;
+    igroup?: string;
 }
 
 export const estudiantes = [{
