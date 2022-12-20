@@ -63,6 +63,7 @@ export class RegistraEstudianteComponent implements OnInit {
       fechaActualizacion: new Date(),
       carrera: this.registrarUsuario.value.carrera!,
       igroup: this.registrarUsuario.value.igroup!,
+      type: "STUDENT"
     }
 
     if (password !== repetirPassword) {
@@ -71,7 +72,6 @@ export class RegistraEstudianteComponent implements OnInit {
     }
     if (validity !== 'VALID') {
       this.toastr.error("El formulario está mal diligenciado", "Error");
-      console.log(this.registrarUsuario)
       return;
     } 
       this.loading=true
@@ -80,6 +80,7 @@ export class RegistraEstudianteComponent implements OnInit {
         this.loading =false;
         const succesMessage = "El usuario "+user.user?.email+" fue creado correctamente.";
         this.toastr.success(succesMessage, "Éxito");
+        this.afAuth.currentUser.then(user=>console.log(user))
         this.estSvC.crearUserWithId(JSON.parse(JSON.stringify(estudiante)), uid!).then(()=>{
           this.router.navigate(['/home']);
           const closer = true
