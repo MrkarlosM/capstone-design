@@ -1,3 +1,4 @@
+import { RecuperaComponent } from './components/account/recupera/recupera.component';
 import { EditProyComponent } from './components/proys/edit-proy/edit-proy.component';
 import { ListProysComponent } from './components/proys/list-proys/list-proys.component';
 import { ProyectComponent } from './components/proys/proyect/proyect.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'new-proy', component: NewProyComponent },
   { path: 'tratamiento-datos', component: TratamientoDatosComponent },
   { path: 'list-proys', component: ListProysComponent },
-  { path: 'edit-proy/:id', component: EditProyComponent }]
+  { path: 'edit-proy/:id', component: EditProyComponent },
+{path: 'app-recupera', component: RecuperaComponent}]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

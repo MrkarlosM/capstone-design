@@ -48,6 +48,11 @@ export class EstudiantesService {
     public crearUser(estudiante: any) {
       return this.afs.collection("ESTUDIANTES").add(estudiante);
     }
+
+    //Agrega un estudiante con su objeto estudiante y id
+    public crearUserWithId(estudiante: any, id:any) {
+      return this.afs.doc(`ESTUDIANTES/${id}`).set(estudiante);
+    }    
   
     //Elimina estudiante
     public borraUser(id: string){

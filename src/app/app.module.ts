@@ -33,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { RecuperaComponent } from './components/account/recupera/recupera.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
@@ -44,13 +46,13 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     VerEstudiantesComponent,
     AgregarEstudiantesComponent,
     AgregarDocentesComponent,
-    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent, TableFilterPipe, SpinnerComponent
+    UsuariosMenuComponent, EditarDocenteComponent, EditarEstudianteComponent, EditProyComponent, RegistraEstudianteComponent, RegistraDocenteComponent, LoginComponent, TratamientoDatosComponent, TableFilterPipe, SpinnerComponent, RecuperaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,ToastrModule.forRoot(),SweetAlert2Module.forRoot(),
     NgbModule,
-    HomeModule,
+    HomeModule,DropdownModule,
     NewProyModule,
     ListProysModule,
     PrimengModule,CardModule,FontAwesomeModule, DialogModule, BrowserAnimationsModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule

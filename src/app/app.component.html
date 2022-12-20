@@ -10,23 +10,29 @@
     <p-button (click)="showModalRegDoc()" icon="pi pi-user-plus" label="Registro Docentes" class="mx-2"></p-button>
     <p-button (click)="showModalRegEst()" icon="pi pi-user-plus" label="Registro Estudiantes" class="mx-2"></p-button>
     <!-- Diálogo del modal -->
-    <p-dialog header="Registra Docente" [(visible)]="displayRegDoc" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
-      [resizable]="false">
+    <p-dialog header="Registra Docente" [(visible)]="displayRegDoc" [modal]="true" [style]="{width: '50vw'}"
+      [draggable]="false" [resizable]="false">
       <app-registra-docente></app-registra-docente>
     </p-dialog>
-    <p-dialog header="Registra Estudiante" [(visible)]="displayRegEst" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
-    [resizable]="false">
-    <app-registra-estudiante></app-registra-estudiante>
-  </p-dialog>
+    <p-dialog header="Registra Estudiante" [(visible)]="displayRegEst" [modal]="true" [style]="{width: '50vw'}"
+      [draggable]="false" [resizable]="false">
+      <app-registra-estudiante></app-registra-estudiante>
+    </p-dialog>
     <p-dialog header="Ingrese" [(visible)]="displayLogin" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
-    [resizable]="false">
-<app-login></app-login>
-    <ng-template pTemplate="footer">
-      <p-button icon="pi pi-check" (click)="displayModal=false" label="Ingresar" styleClass="p-button-text"></p-button>
-    </ng-template>
-  </p-dialog>
-    <!-- Este botón hace cerrar sesión -->
-    <p-button *ngIf="logedIn" icon="pi pi-power-off" (click)="logOff()" label="Quit" styleClass="p-button-text"></p-button>
+      [resizable]="false">
+      <app-login></app-login>
+      <p class="mt-4" style="text-align: center;">¿No recuerda? <a routerLink="/app-recupera" (click)="displayLogin=false">Recupera tu
+          cuenta</a></p>
+          <p style="text-align: center;">¿No tiene cuenta? <a href="#" (click)="displayLogin=false" (click)="displayRegEst=true">Regístrate como Estudiante</a></p>
+            <p style="text-align: center;">¿No tiene cuenta? <a href="#"(click)="displayLogin=false" (click)="displayRegDoc=true">Regístrate como Docente</a></p>
+      <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ingresar"
+          styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-dialog>
+    <!-- Este botón cierra sesión -->
+    <p-button *ngIf="logedIn" icon="pi pi-power-off" (click)="logOff()" label="Quit"
+      styleClass="p-button-text"></p-button>
   </ng-template>
 </p-menubar>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"

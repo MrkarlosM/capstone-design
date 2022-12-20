@@ -23,7 +23,7 @@ export class VerDocentesComponent implements OnInit {
   //docentes1 = this.docentes0.slice(0, this.cantidadPag);
   docentes: any[] | undefined;
   tipoUser = 'PROFESORES'
-  constructor(public firestore: AngularFirestore, private docentesSvc: DocentesService) {
+  constructor( private docentesSvc: DocentesService) {
   }
 
   ngOnInit() {
