@@ -12,7 +12,7 @@
     <!-- Diálogo del modal -->
     <p-dialog header="Registra Docente" [(visible)]="displayRegDoc" [modal]="true" [style]="{width: '50vw'}"
       [draggable]="false" [resizable]="false">
-      <app-registra-docente></app-registra-docente>
+      <app-registra-docente (childToParent)="childToParent($event)"></app-registra-docente>
     </p-dialog>
     <p-dialog header="Registra Estudiante" [(visible)]="displayRegEst" [modal]="true" [style]="{width: '50vw'}"
       [draggable]="false" [resizable]="false">
