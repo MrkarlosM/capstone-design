@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Docente } from 'src/app/shared/models/docente';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +21,8 @@ export class EditarDocenteComponent implements OnInit {
     
   })
 
-  constructor(private _location: Location, private docentesSvc: DocentesService, public route: ActivatedRoute, private toastr: ToastrService) { }
+  constructor(private _location: Location, private docentesSvc: DocentesService, public route: ActivatedRoute, private toastr: ToastrService,
+    private afAuth: AngularFireAuth) { }
 id:string|undefined;
   ngOnInit(): void {
     const idProfe = this.route.snapshot.params['id'];
